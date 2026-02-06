@@ -1,64 +1,167 @@
+/* --- GENERAL RESET --- */
+/* Removes default browser margins and sets the font */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
-
-.cv-container {
-    max-width: 800px;
-    background: #ffffff;
-    margin: 40px auto;
-    padding: 30px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
 .cv-header {
     text-align: center;
-    margin-bottom: 30px;
 }
 
-.cv-header img {
-    width: 150px;
-    height: 150px;
+/* --- NAVIGATION BAR STYLING --- */
+/* Target specific ID: main-nav */
+#main-nav {
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    display: flex; /* Makes items sit in a row */
+    justify-content: space-between; /* Pushes logo left, links right */
+    align-items: center;
+}
+
+#logo {
+    margin: 0;
+}
+.photo-wrapper {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-}
-
-.cv-header h1 {
-    margin: 10px 0 5px;
-}
-
-.title {
-    color: #555;
-    font-size: 18px;
-}
-
-section {
-    margin-bottom: 25px;
-}
-
-section h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
-}
-
-ul {
-    padding-left: 20px;
-}
-
-.skills li {
-    display: inline-block;
-    background: #e0e0e0;
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 5px;
-}
-.profile-pic {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
+    overflow: hidden;   /* 🔥 THIS IS THE KEY */
     margin: 0 auto 15px auto;
 }
 
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 🔥 fills the circle */
+}
+#main-nav ul {
+    list-style: none; /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#main-nav ul li {
+    margin-left: 20px;
+}
+
+#main-nav a {
+    text-decoration: none; /* Removes underline */
+    color: white;
+    font-weight: bold;
+}
+
+/* --- SECTION TITLES --- */
+.section-title {
+    text-align: center;
+    color: #333;
+    margin-top: 40px;
+}
+
+/* --- FEATURED PRODUCTS STYLING --- */
+/* Target specific ID: product-container */
+#product-container {
+    display: flex;
+    justify-content: center; /* Centers products */
+    gap: 20px; /* Space between products */
+    flex-wrap: wrap; /* Allows products to wrap on small screens */
+    padding: 20px;
+}
+
+/* Styling for the product cards */
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Simple grey box to represent an image */
+.image-placeholder {
+    width: 100%;
+    height: 150px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+/* Styling the button inside the product card */
+.product-card button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.product-card button:hover {
+    background-color: #218838;
+}
+
+/* --- CONTACT FORM STYLING --- */
+/* Target specific ID: contact-section */
+#contact-section {
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+#contact-form {
+    max-width: 500px;
+    margin: 0 auto; /* Centers the form */
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Styling inputs using Attribute selectors or types */
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Includes padding in width calculation */
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Styling the submit button specifically by ID */
+#submit-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+#submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* --- FOOTER STYLING --- */
+#main-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
